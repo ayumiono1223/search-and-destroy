@@ -2,7 +2,18 @@
 
 //Complete this algo
 const isLoop = (linkedlist) => {
+  let slowFrog = linkedlist.head;
+  let fastFrog = linkedlist.head;
 
+  while (fastFrog.next !== null) {
+    fastFrog = fastFrog.next.next;
+    slowFrog = slowFrog.next;
+
+    if (fastFrog.value === slowFrog.value) {
+      return true;
+    }
+  }
+  return false;
 };
 
 
